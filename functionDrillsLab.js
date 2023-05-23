@@ -361,11 +361,11 @@ console.log(emailCheck(`  Alex@gmail.com  `))
 //CODE HERE
 const goldForFrogs = (gold) => {
   let frogsCost = 3
-  let purchase = Math.floor(parseInt(gold) / frogsCost)
+  let purchase = parseInt(gold) / frogsCost
   return purchase
 }
 
-console.log(goldForFrogs(7))
+let totalFrogs = console.log(goldForFrogs(7))
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -373,15 +373,36 @@ console.log(goldForFrogs(7))
 */
 
 //CODE HERE
+const goldForFrogs2 = (gold) => {
+  let frogsCost = 3
+  let purchase = Math.floor(parseInt(gold) / frogsCost)
+  return purchase
+}
+
+let totalFrogs2 = console.log(goldForFrogs2(7))
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,7,5,6,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+let ascension = true
+function takesArray (array){
+    for (let i = 0; i < array.length && ascension === true; i++){
+      if (array[i] >= array[i+1]){
+        ascension = false
+        // console.log (`false`)
+      }else {
+        ascension = true
+        // console.log(`true`)
+      }
+    }
+    return ascension 
+}
+let arrayIsAscending = console.log(takesArray(sampleArray))
 
 
 ////////////////// PROBLEM 22 ////////////////////
@@ -406,13 +427,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = [`duck`]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = [`rubberDuck`, `Duck`]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = [`sailorDuck`, `rubberDuck`, `Duck`]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = [`fluffy`, `duck`]
