@@ -325,6 +325,8 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const newString = (sentance) => `${sentance}`.toUpperCase()
+console.log(newString(sampleString))
 
 
 ////////////////// PROBLEM 18 ////////////////////
@@ -338,6 +340,18 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+function emailCheck (email){
+  let emailString = String(email).trim()
+  if (emailString.includes(`@`)){
+    return `${emailString} is a verified email`
+  }else {
+    return `Must provide a valid email address`
+  }
+}
+
+console.log(emailCheck(`  Alex@gmail.com  `))
+
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -345,7 +359,13 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const goldForFrogs = (gold) => {
+  let frogsCost = 3
+  let purchase = Math.floor(parseInt(gold) / frogsCost)
+  return purchase
+}
 
+console.log(goldForFrogs(7))
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
